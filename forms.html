@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas Formulário</title>
+</head>
+<body>
+    <form action="envio.html" method="get"> <!-- Tag de formulario - 
+        action: é a ação pós envio do forms 
+        method: metódo de envio do forms (pela url ou "secretamente")
+    --> 
+    
+                <!-- 
+                required - campo obrigatorio
+                multiple - seleciona mais de uma opção
+                disabled - desabilita o input
+                readonly - somente leitura (nao pode editar)
+                FIELDSET - serve para organizar/agrupar os campos do forms
+            -->
+
+<!-- INPUTS DE TEXTO E NÚMERO:
+1. TEXTO - TEXT
+2. NUMERO - NUMBER
+3. EMAIL - EMAIL
+4. TELEFONE - TEL
+5. BUSCA - SEARCH
+6. URL - URL
+7. SENHA - PASSWORD
+-->
+    <fieldset>
+    <legend>Info Pessoais</legend>
+        <p>
+            <label for="input-texto">Texto</label>
+            <!-- Tag Label - título do input "caixinha" 
+            for: faz referência/liga ao input - clicou no label ativa o input
+            -->
+            <input id="input-texto" type="text" name="Texto" required/>
+            <!--Tag input - onde à informação irá ser colocada
+            id: identifica
+            type: tipo de dado
+            nome: nome do input - oque irá ser colocado?
+            text: texto simples
+            -->
+        </p>
+        <p>
+            <label for="input-numero">Número</label>
+            <input id="input-numero" type="number" name="Número" min="0" max="10" disabled/>
+            <!-- min/max: define o valor máximo e minimo do numero -->
+            <!-- de acordo com o quant max de numeros muda o tamnho da caixa do input  -->
+        </p>
+        <p>
+            <label for="input-email">Email</label>
+            <input id="input-email" type="email" name="Email" value="teste@email.com" readonly/>
+            <!-- Nao deixa enviar sem @ -->
+        </p>
+    </fieldset>
+        <p>
+            <label for="input-telefone">Telefone</label>
+            <input id="input-tel" type="tel" name="telefone" pattern="(\[0-9]{2}\)\s(\[0-9]{1}\)?[0-9]{4}-[0-9]{4}" placeholder="(99) 99999-9999"/>
+            <!-- pattern: padrão de telefone (quais dígitos irão ser aceitos) -->
+            <!-- placeholder: dica do que deve ser escrito (pré-vizualização) - válido para qualquer tipo de input -->
+        </p>
+        <p>
+            <label for="input-busca">Busca</label>
+            <input id="input-busca" type="search" name="busca"/>
+            <!-- Busca: pesquisa algo que esta armazenado -->
+        </p>
+        <p>
+            <label for="input-url">URL</label>
+            <input id="input-url" type="URL" name="UR"/>
+            <!-- igual o input de texto porém valida uma URL -->
+        </p>
+        <p>
+            <label for="input-senha">Senha</label>
+            <input id="input-senha" type="password" name="senha"/>
+            <!-- Bloquei a visão do que estã sendo escrito -->
+        </p>
+        
+        <!-- INPUTS DE DATA
+        
+        DATA - DATE
+        DATE HORA - DATETIME
+        TEMPO - TIME
+        MÊS - MONTH
+        SEMANA - WEEK
+    -->
+    
+        <p>
+            <label for="input-data">Data</label>
+            <input id="input-data" type="date" name="data"/>
+            <!-- Oferece um mini calendário -->
+        </p>
+        <p>
+            <label for="input-datahora">Data e Hora</label>
+            <input id="input-datahora" type="datetime-local" name="datahora"/>
+            <!-- Mesma coisa do input de data porém com um espaço para colocar as horas -->
+        </p>
+        <p>
+            <label for="input-hora">Hora</label>
+            <input id="input-hora" type="time" name="hora"/>
+            <!-- Espaço para colocar somente as horas -->
+        </p>
+        <p>
+            <label for="input-mes">Mês</label>
+            <input id="input-mes" type="month" name="mes"/>
+            <!-- Espaço para colocar smês e ano -->
+        </p>
+        <p>
+            <label for="input-semana">Semana</label>
+            <input id="input-semana" type="week" name="semana"/>
+            <!-- Espaço para colocar a semana de acordo com o ano e mês-->
+        </p>
+
+
+        <!-- INPUTS DE ESCOLHA 
+        
+        CHECKBOX - CAIXA DE SELEÇÃO
+        RADIO - BOTÃO DE OPÇÃO
+        -->
+
+        
+        <p>
+            <label for="input-termos">Aceito os termos de uso (Input fora do label)</label>
+            <input id="input-termos" type="checkbox" name="termos"/>
+            <!-- caixa de seleção -->
+        </p>
+
+        <p>
+            <label for="input-termos">
+                <input id="input-termos" type="checkbox" name="termos"/>Aceito os termos de uso (dentro do label)
+                <input id="input-termos" type="checkbox" name="termos"/>Aceito os termos de imagem
+            </label>
+            <!-- caixa de seleção - pode escolher várias opções
+            dentro do label para aparecer o texto a direita da caixa
+            -->
+        </p>
+        <p> Aceita os termos?
+            <input id="sim" type="radio" name="aceito" value="sim"/>
+            <label for="sim">Sim</label>
+            <input id="nao" type="radio" name="aceito" value="nao"/>
+            <label for="nao">Nao</label>
+            <!-- 
+            inverso do checkbox, escolhe uma opção ou outra
+            PARA SELECIONAR UMA OPÇÃO OU OUTRA TEM QUE USAR O MESMO NOME NOS INPUTS -->
+        </p>
+        <!-- 
+            <p>
+                <label for="input-selecao">Seleção</label>
+                <select name="selecao" id="input-selecao">
+                    <option value="teste1">opcao 1</option>
+                    <option value="teste2">opcao 2</option>
+                </select>
+                Selção: lista de opções. seleciona uma ou outra 
+                </p>
+            -->
+                
+                
+        <!-- INPUTS ESPECIAIS
+        COR - COLOR
+        ARQUIVO - FILE
+        FAIXA - RANGE
+        ESCONDIDO - HIDDEN
+        
+        -->
+
+
+        <p>
+            <label for="input-cor">Cor</label>
+            <input type="color" name="cor" id="input-cor"/>
+        </p>
+        <p>
+            <label for="input-arquivo">Arquivo</label>
+            <input type="file" name="arquivo" id="input-arquivo" accept=".mp3, .mp4, .webp" multiple/>
+            <!-- Seleciona arquivo do computador
+            accept: o que será aceito, o tipo do arquivo que será aceito (nesse caso so aceita arquivos mp3 e mp4)
+            multiple: permite seleccionar vários arquivos ao mesmo tempo
+            -->
+        </p>
+        <p>
+            <label for="input-faixa">Range</label>
+            <input type="range" name="range" id="input-faixa" min="0" max="6" step="2"/>
+            <!-- 
+            min: define o mínimo/começo da faixa
+            max: define o máximo/fim da faixa
+            step: define o intervalo entre os valores da faixa (vai pular de quanto em quanto? nesse caso de 2 em 2)
+            -->
+        </p>
+        <p>
+            <input type="hidden" name="protocolo" value="000123"/>
+            <!-- valor invisível que vai estar pré definido 
+            
+            * não deve ser usado para armazenar informações confidenciais ou cruciais que não possam ser manipuladas pelo usuário. *
+
+            casos de uso:  
+            1. validação no back-end 
+            2. envio de IDs de registros
+            3. Valores fixos e constantes (nesse caso - seria para um formulario de atendimento e precisa do numero de protocolo)
+            -->
+        </p>
+
+        <!-- 
+            INPUTS DE ENTRADA
+
+            ENVIAR - SUBMIT
+            RESETAR - RESET
+            BOTAO IMAGEM - IMAGE BUTTON
+        -->
+            <p>
+                <input type="submit" value="botao de envio"/>
+                <!-- melhor usar o button type submit do que o input -->
+                <input type="reset" value="limpa formulario">
+                <!-- melhor usar o button também -->
+            </p>
+
+            <p>
+                <input type="image" src="/photo-1542831371-29b0f74f9713.jpeg" width="150"/>
+                <!-- transforma uma imagem em um botão -->
+            </p>
+
+            <!-- Não sao input mas funcionam como um
+            TEXTAREA
+            SELECT
+            -->
+
+            <p>
+                <label for="mensagem">Mensagem</label>
+                <textarea name="mensagem" id="mensagem" rows="10"></textarea>
+
+                <!-- consegue mandar mensagens maiores 
+                rows - quantidade de linhas
+                -->
+            </p>
+
+            <p>
+                <label for="opcoes">Opções</label>
+                <select name="opção" id="opcoes">
+                    <option value="opcao1">Teste1</option>
+                    <option value="opccao2">Teste2</option>
+                    <option value="opccao3">Teste3</option>
+                </select>
+            </p>
+            <p>
+                <label for="opcoes">Opções (varias)</label>
+                <select name="opção" id="opcoes" multiple>
+                    <!-- multiple permite escolher mais de uma opção -->
+                    <option value="opcao1">Teste1</option>
+                    <option value="opccao2">Teste2</option>
+                    <option value="opccao3">Teste3</option>
+                </select>
+            </p>
+
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar Formulario</button>
+        <!--Tag de botão com um tipo (submit - enviar)-->
+
+    </form>
+</body>
+</html>
